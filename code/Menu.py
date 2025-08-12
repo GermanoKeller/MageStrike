@@ -9,13 +9,13 @@ from code.Const import C_BLACK, C_LIGHT_YELLOW, C_WHITE, C_YELLOW, MENU_OPTION, 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load("./asset/BMenu.png").convert_alpha()
+        self.surf = pygame.image.load("./asset/MenuBg.png").convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
 
     def run(self, ):
         menu_option = 0
-        pygame.mixer_music.load("./asset/menuSound.wav")
+        pygame.mixer_music.load("./asset/MenuSound.mp3")
         pygame.mixer_music.play(-1)
         while True:
             # Draw Images
