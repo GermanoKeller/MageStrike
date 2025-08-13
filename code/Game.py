@@ -8,6 +8,7 @@ from code.Const import MENU_OPTION, WIN_HEIGHT, WIN_WIDTH
 class Game:
     def __init__(self):
         pygame.init()
+        pygame.display.set_caption("MageStrike")
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
 
 
