@@ -20,14 +20,14 @@ class Menu:
         while True:
             # Draw Images
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(150, "MageStrike", C_LIGHT_YELLOW, ((WIN_WIDTH/2), 120))
+            self.menu_text(100, "MageStrike", C_LIGHT_YELLOW, ((WIN_WIDTH/2), 80))
             
             # Escreve o menu
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(50, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH/2), 350 + 50*i))
+                    self.menu_text(40, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH/2), 300 + 40*i))
                 else:
-                    self.menu_text(50, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH/2), 350 + 50*i))    
+                    self.menu_text(40, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH/2), 300 + 40*i))    
                 
             pygame.display.flip()
 

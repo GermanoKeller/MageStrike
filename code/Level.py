@@ -4,7 +4,7 @@
 import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
-from code.Const import C_WHITE, WIN_HEIGHT
+from code.Const import C_WHITE, MENU_OPTION, WIN_HEIGHT
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 
@@ -17,6 +17,10 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity("Level1Bg"))
         self.entity_list.append(EntityFactory.get_entity("FireWizard"))
+        if game_mode in MENU_OPTION[0]:
+            self.entity_list.append(EntityFactory.get_entity("Enemy"))
+        if game_mode in MENU_OPTION[1]:
+            self.entity_list.append(EntityFactory.get_entity("LMage"))
 
     def run(self, ):
         pygame.mixer_music.load("./asset/Level1Sound.mp3")
@@ -27,6 +31,7 @@ class Level:
 
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
+                ent.move()
 
             self.level_text(30, f"fps: {clock.get_fps():.0f}", C_WHITE, (40, WIN_HEIGHT - 20))
 
