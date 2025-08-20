@@ -17,9 +17,10 @@ class EntityFactory:
                 for i in range(7):
                     list_bg.append(Background(f"Level1Bg{i}", (0,0)))
                 return list_bg
-            case "FireWizard":
-                return Player("FireWizard", (WIN_WIDTH/4, WIN_HEIGHT - 250))
+            case "FWizard":
+                return Player("FWizard", (WIN_WIDTH/4, WIN_HEIGHT - 250))
             case "LMage":
                 return Player("LMage", (WIN_WIDTH/1.4, WIN_HEIGHT - 250))
             case "Enemy":
-                return Enemy("LMage", (WIN_WIDTH/1.4, WIN_HEIGHT - 250))
+                return Enemy("Enemy", (WIN_WIDTH/1.4, WIN_HEIGHT - 250))
+            

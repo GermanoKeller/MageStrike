@@ -10,3 +10,4 @@ class Background(Entity):
     
     def move(self,):
         pass
+    
