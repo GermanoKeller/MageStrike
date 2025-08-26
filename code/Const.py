@@ -6,6 +6,7 @@ C_LIGHT_YELLOW = (230, 228, 123)
 C_BLACK = (0, 0, 0)
 C_WHITE = (255, 255, 255)
 C_YELLOW = (255, 253, 85)
+C_GREEN = (0, 200, 0)
 
 # E
 ENTITY_SPEED = {
@@ -37,6 +38,22 @@ ENTITY_SHOT_DELAY = {
     "FWizard": 20,
     "LMage": 20,
     "Enemy": 60
+}
+
+ENTITY_DAMAGE = {
+    "Level1Bg0": 0,
+    "Level1Bg1": 0,
+    "Level1Bg2": 0,
+    "Level1Bg3": 0,
+    "Level1Bg4": 0,
+    "Level1Bg5": 0,
+    "Level1Bg6": 0,
+    "FWizard": 1,
+    "FWizardShot": 25,
+    "LMage": 1,
+    "LMageShot": 25,
+    "Enemy": 1,
+    "EnemyShot": 20
 }
 
 # M

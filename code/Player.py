@@ -32,4 +32,4 @@ class Player(Entity):
                 direction = 1
                 if self.name == "LMage":
                     direction = -1
-                return PlayerShot(name=f"{self.name}Shot", position=(self.rect.centerx, self.rect.centery - 20), direction=direction)
+                return PlayerShot(name=f"{self.name}Shot", position=(self.rect.centerx, self.rect.centery - 20),owner=self, direction=direction)
