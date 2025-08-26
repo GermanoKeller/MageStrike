@@ -11,6 +11,7 @@ class Player(Entity):
     def __init__(self, name: str, position: tuple,):
         super().__init__(name, position)
         self.shot_delay = ENTITY_SHOT_DELAY[self.name]
+        self.score = 0
         
     def move(self, ):
         pressed_key = pygame.key.get_pressed()

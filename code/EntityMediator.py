@@ -49,7 +49,11 @@ class EntityMediator:
 
     @staticmethod
     def __give_score(player: Player, entity_list: list[Entity]):
-        pass
+        for ent in entity_list:
+            if isinstance(ent, Player) and ent is not player:
+                if not hasattr(ent, "score"):
+                    ent.score = 0
+                ent.score += 1
 
 
     @staticmethod
