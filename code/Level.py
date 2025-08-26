@@ -50,6 +50,26 @@ class Level:
             # Collisions
             EntityMediator.verify_collision(entity_list=self.entity_list)
             EntityMediator.verify_health(entity_list=self.entity_list)
+
+            # Fim da Fase
+            player_alive = any(ent.name == "FWizard" for ent in self.entity_list)
+            enemy_alive = any(ent.name == "LMage" for ent in self.entity_list)
+            cpu_alive = any(ent.name == "Enemy" for ent in self.entity_list)
+
+            if self.game_mode in MENU_OPTION[1]:
+                if not player_alive and enemy_alive:
+                    self.show_end_message("Lightning Mage WIN!", C_WHITE)
+                    break
+                if not enemy_alive and player_alive:
+                    self.show_end_message("FireWizard WIN!", C_WHITE)
+                    break
+            else:
+                if not player_alive:
+                    self.show_end_message("Derrota!", C_WHITE)
+                    break
+                if not cpu_alive:
+                    self.show_end_message("Vitória!", C_WHITE)
+                    break
         
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -71,3 +91,9 @@ class Level:
                         self.window.blit(source=outline_surf, dest=outline_rect)
 
         self.window.blit(source=text_surf, dest=text_rect)
+
+    def show_end_message(self, message, color):
+        self.window.fill((0, 0, 0))
+        self.level_text(40, message, color, (WIN_HEIGHT // 2, WIN_HEIGHT // 2), outline_width=2)
+        pygame.display.flip()
+        pygame.time.delay(2500) 
