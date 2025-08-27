@@ -30,7 +30,7 @@ ENTITY_HEALTH = {
     "FWizardShot": 1,
     "LMage": 200,
     "LMageShot": 1,
-    "Enemy": 100,
+    "Enemy": 400,
     "EnemyShot": 1
 }
 
@@ -53,13 +53,12 @@ ENTITY_DAMAGE = {
     "LMage": 1,
     "LMageShot": 25,
     "Enemy": 1,
-    "EnemyShot": 20
+    "EnemyShot": 100
 }
 
 # M
 MENU_OPTION = ("NEW GAME 1P",
                "NEW GAME 2P",
-               "SCORE",
                "EXIT")
 
 # O
